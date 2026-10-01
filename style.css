@@ -1,0 +1,370 @@
+/* =========================================
+   LAKHPATI'S CAFE & RESTAURANT
+   Main Website Styles
+   ========================================= */
+
+:root {
+    --black: #0c0b09;
+    --cream: #fbf9f5;
+    --gold: #c5a059;
+    --bright-gold: #d4af37;
+    --espresso: #2c241b;
+    --muted: #b9b1a5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--cream);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: Georgia, serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(12, 11, 9, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(197, 160, 89, 0.22);
+}
+
+.navbar {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--cream);
+    font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+    color: var(--bright-gold);
+}
+
+.nav-button {
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 11px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background: var(--bright-gold);
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    min-height: 84vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(212, 175, 55, 0.10),
+            transparent 52%
+        );
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: min(420px, 82vw);
+    height: auto;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    font-size: clamp(2.3rem, 7vw, 5.4rem);
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: 1px solid var(--gold);
+    transition: 180ms ease;
+}
+
+.btn-primary {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.btn-primary:hover {
+    background: var(--bright-gold);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--cream);
+}
+
+.btn-secondary:hover {
+    background: rgba(197, 160, 89, 0.10);
+}
+
+/* ---------- SECTION ---------- */
+
+.section {
+    padding: 84px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.section-heading span {
+    display: block;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.section-heading h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+/* ---------- CRAVING CATEGORIES ---------- */
+
+.craving-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.craving-card {
+    min-height: 130px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    background: #15130f;
+    border: 1px solid rgba(197, 160, 89, 0.22);
+    border-radius: 20px;
+    transition: 180ms ease;
+}
+
+.craving-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.craving-card h3 {
+    color: var(--cream);
+}
+
+/* ---------- FOOD CARDS ---------- */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.food-card {
+    background: #15130f;
+    border: 1px solid rgba(197, 160, 89, 0.20);
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.food-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.food-content {
+    padding: 18px;
+}
+
+.food-content h3 {
+    color: var(--cream);
+    margin-bottom: 8px;
+}
+
+.food-description {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+}
+
+.food-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.price {
+    color: var(--gold);
+    font-weight: 800;
+}
+
+.add-button {
+    border: 1px solid var(--gold);
+    color: var(--cream);
+    background: transparent;
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer {
+    border-top: 1px solid rgba(197, 160, 89, 0.2);
+    padding: 40px 0;
+    color: var(--muted);
+    text-align: center;
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .craving-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 78vh;
+        padding: 70px 0;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .navbar {
+        min-height: 64px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .craving-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .craving-card {
+        min-height: 100px;
+        padding: 14px;
+    }
+}
